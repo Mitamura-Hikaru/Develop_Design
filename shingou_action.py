@@ -1,4 +1,5 @@
 from enum import Enum
+import sys
 class Shingou(Enum):
     RED = 1
     BLUE = 2
@@ -7,7 +8,7 @@ class Shingou(Enum):
 def act_shingou(color):
     shingou = Shingou(color)
 
-    if shingou is Shindou.RED:
+    if shingou is Shingou.RED:
         print("とまれ")
     elif shingou is Shingou.BLUE:
         print("進め")
@@ -17,3 +18,7 @@ def act_shingou(color):
         raise Exception(
             
         )
+
+if __name__=="__main__":
+    args =  sys.argv
+    act_shingou(int(args[1]))
